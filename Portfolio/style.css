@@ -1,5 +1,5 @@
 html {
-    width: 150rem;
+
     font-size: 5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -8,18 +8,19 @@ nav {
     background-color: aquamarine;
     text-align: center;
 }
+
 .photoes{
     display: inline-block;
     border: 5px solid;
     font-size: 1.25rem;
 }
+
 nav ul li {
     display: inline-block;
     padding: 1rem 2rem 1rem 2rem;
 }
 
 button {
-
     width: 15rem;
     height: 6rem;
 }
@@ -30,11 +31,16 @@ font-size: 3rem;
 }
 
 img {
+    position: relative;
     border: 2px solid;
     padding: 10px;
     margin: 5rem;
     max-width: 80%;
-    min-width: 40%;
+    min-width: 20%;
     max-height: 80%;
-    min-height: 40%;
+    min-height: 10%;
+}
+
+img:hover{
+    border: 0.5rem solid;
 }
