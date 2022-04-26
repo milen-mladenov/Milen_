@@ -51,7 +51,7 @@ nav ul li {
 }
 
 img {
-    display: inline-flex;
+    display: flex;
     border: 5px solid;
     padding: 10px;
     margin: 3rem 3rem;
@@ -63,15 +63,13 @@ img {
 }
 
 img:hover {
-    transition: 750ms;
+    transition: 750ms 350ms;
     border: 5rem solid rgba(32, 218, 162, 0.4) ;
     border-radius: 45px;
     max-width: 100%;
     min-width: 70%;
     height: auto;
     background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    position: static;
 }
 
 body ul {
