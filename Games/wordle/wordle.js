@@ -15289,8 +15289,15 @@ const targetWords = [
     "rural",
     "shave"
 ];
+
 const guessGrid = document.querySelector("[data-guess-grid]")
 const WORD_LENGTH = 5;
+const offsetFromDate = new Date(2022, 0, 1);
+const msOffset = Date.now() - offsetFromDate;
+const dayOffset = msOffset / 1000 / 60 / 60 / 24;
+const targetWord = targetWords[Math.floor(dayOffset)];
+
+
 startInteraction()
 
 
@@ -15345,8 +15352,16 @@ function pressKey(key) {
     nextTile.dataset.letter = key.toLowerCase();
     nextTile.textContent = key;
     nextTile.dataset.state = "active";
-
 };
+
+function deleteKey(){
+    const activeTiles = getActiveTiles();
+    const lastTile = activeTiles[activeTiles.length -1];
+    if(lastTile == null) return
+    lastTile.textContent = "";
+    delete lastTile.dataset.state
+    delete lastTile.dataset.letter
+}
 
 function getActiveTiles() {
     return guessGrid.querySelectorAll('[data-state="active"]')
