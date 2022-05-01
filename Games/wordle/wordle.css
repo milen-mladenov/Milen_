@@ -1,0 +1,46 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: hsl(240, 3%, 7%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1em;
+    font-size: clamp(.5rem, 2.5vmin, 1.5rem);
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(20, minmax(auto, 1.25em));
+    grid-gap: .25em;
+    grid-auto-rows: 3em;
+    justify-content: center;
+}
+.key {
+    font-size: inherit;
+    grid-column: span 2;
+    border-radius: .25em;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(200, 1%, 51%);
+    color: white;
+    fill: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+}
+
+.key.large {
+    grid-column: span 3;
+}
+
+.key > svg {
+    height: 1.75em;
+    width: 1.75em;
+}
