@@ -15289,7 +15289,7 @@ const targetWords = [
     "rural",
     "shave"
 ];
-
+const alertContainer = document.querySelector("[data-alert-container]")
 const guessGrid = document.querySelector("[data-guess-grid]")
 const WORD_LENGTH = 5;
 const offsetFromDate = new Date(2022, 0, 1);
@@ -15363,6 +15363,30 @@ function deleteKey(){
     delete lastTile.dataset.letter
 }
 
+function submitGuess(){
+    const activeTiles = [...getActiveTiles()];
+    if(activeTiles.length !== WORD_LENGTH){
+        showAllert("Not enough letters!");
+        shakeTiles(activeTiles);
+        return
+    }
+
+}
 function getActiveTiles() {
     return guessGrid.querySelectorAll('[data-state="active"]')
+}
+
+function showAllert(message, duration = 1000){
+    const alert = document.createElement("p")
+    alert.textContent = message;
+    alert.classList.add("alert");
+    alertContainer.prepend(alert)
+    if(duration == null) return
+
+    setTimeout(() => {
+        alert.classList.add("hide")
+        alert.addEventListener("transitionend", () => {
+            alert.remove()
+        })
+    }, duration)
 }
