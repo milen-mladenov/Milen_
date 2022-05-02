@@ -1,10 +1,10 @@
 body {
     width: 100vw;
+    height: 100vh;
     margin: 0;
     padding: 0;
     font-size: 1rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgba(164, 77, 164, 0.529);
 }
 
 header {
@@ -13,22 +13,52 @@ header {
     display: inline-flex;
     width: 100%;
     text-decoration: none;
+    align-items: center;
+    flex-direction: column-reverse;
+    position: fixed;
+}
+
+main {
+    position: relative;
+    top: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    padding-top: 150px;
+    padding-bottom:120px;
 }
 
 h2 {
     margin: 0;
     padding: 0;
     display: inline-flex;
-    background-color: rgba(127, 255, 212, 0.752);
+    background-color: #772c61bf;
+    width: 100%;
+    justify-content: center;
 }
 
 .navigation {
     display: inline-flex;
     padding: 0;
-    background-color: #9D0023;
+    background-color: #772c61c5;
     text-align: right;
     width: 100%;
     margin: auto;
+    justify-content: space-around;
+}
+
+ul > li {
+    list-style: none;
+    display: inline-flex;
+    flex-direction: row;
+    margin: 1em 3em;
+}
+
+.navigation li a {
+    color: white;
+    font-size: 2rem;
+    
 }
 
 aside {
@@ -38,4 +68,11 @@ aside {
     max-width: 15%;
     margin: auto;
     padding: 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
 }
