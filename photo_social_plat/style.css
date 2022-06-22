@@ -59,7 +59,7 @@ main {
 /*  */
 #registration_form {
   margin: auto;
-  display: none;
+  display: flex;
   background-color: var(--baje-prime);
   padding: 1.5rem;
   border-radius: 15px;
