@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fancy Name inc</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div id="navigation">
+        <div id="logo">
+          <img src="./img/Logo.svg" alt="star" />
+          <h2>FancyName</h2>
+        </div>
+        <nav id="main_navigation">
+          <ul>
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+          </ul>
+        </nav>
+        <div id="login">
+          <a href="#">Login</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="registration_form" data-registration-state="hidden">
+        <form action="">
+          <span>
+            <label for="f_name">First Name</label> <input type="text"
+          /></span>
+          <span>
+            <label for="l_name">Last Name</label> <input type="text"
+          /></span>
+          <span>
+            <label for="country">Country</label>
+            <select name="county" id="country_select">
+              <option value="c_1">option1</option>
+              <option value="c_2">option2</option>
+              <option value="c_3">option3</option>
+              <option value="c_4">option4</option>
+            </select></span
+          >
+          <span>
+            <label for="city">City</label>
+            <input type="text"
+          /></span>
+          <span> <label for="email">Email</label> <input type="text" /></span>
+          <span>
+            <label for="email_confirm">Confirm Email</label> <input type="text"
+          /></span>
+          <span>
+            <label for="password">Password</label> <input type="text"
+          /></span>
+
+          <span>
+            <label for="password_confirm">Confirm Password</label>
+            <input type="text" />
+          </span>
+
+          <textarea
+            name="descriotion"
+            cols="30"
+            rows="10"
+            placeholder="Description..."
+          ></textarea>
+        </form>
+        <div id="form_btns">
+          <button id="submit_registration" class="button">Submit</button>
+          <button id="clear_registration" class="button">Clear</button>
+        </div>
+      </div>
+
+      <div id="photo_upload_form" data-registration-state="hidden">
+        <form action="">
+          <div id="upload">
+            <div>
+              <label for="picture_upload">Upload from PC:</label>
+              <input type="file" name="picture_upload" id="picture_upload" />
+              <p>OR:</p>
+              <label for="picture_link">Upload from link:</label>
+              <input type="text" />
+            </div>
+
+            <div>
+              <input type="radio" name="option" id="option_public" />
+              <label for="option_public">Public</label>
+              <input type="radio" name="option" id="option_private" />
+              <label for="option_private">Private</label>
+            </div>
+          </div>
+          <label for="description">Description</label>
+          <textarea
+            name="descriotion"
+            cols="30"
+            rows="10"
+            placeholder="Description..."
+          ></textarea>
+          <button id="submit_photo" class="button">Submit</button>
+        </form>
+      </div>
+
+      <div id="authors_showcase_profiles" data-author-showcase-state="hidden">
+        <section class="author_info_and_pictures">
+          <div class="author_info">
+            <div class="author_picture">
+              <img
+                src="./img/ppl/malik-skydsgaard-IgkwHPb-Vk8-unsplash.jpg"
+                alt="person"
+              />
+            </div>
+
+            <h2 class="author_name">Lorem, ipsum.</h2>
+            <div>
+              <ul class="stats">
+                <li class="stat">
+                  <div>
+                    <p>stat 1:</p>
+                    <p>15</p>
+                  </div>
+                </li>
+                <li class="stat">
+                  <div>
+                    <p>stat 2:</p>
+                    <p>15</p>
+                  </div>
+                </li>
+                <li class="stat">
+                  <div>
+                    <p>stat 3:</p>
+                    <p>153</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <p class="author_quick_sum">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+              obcaecati omnis eius eligendi praesentium explicabo veritatis?
+              Velit praesentium repellendus, magni dolore iure ratione quaerat
+              dolores cumque aliquid dolorem aspernatur tempore.
+            </p>
+          </div>
+          <div class="author_pictures">
+            <div class="main_picture">
+              <img
+                src="./img/ppl/steffen-petermann-1FZf94ONPWQ-unsplash.jpg"
+                alt=""
+              />
+            </div>
+            <div class="additional_pictures">
+              <img
+                src="./img/ppl/steward-masweneng-q2dD3fNjbEQ-unsplash.jpg"
+                alt=""
+              />
+              <div>
+                <p class="additional_pictures_count">5+</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="author_info_and_pictures">
+          <div class="author_info">
+            <div class="author_picture">
+              <img
+                src="./img/ppl/malik-skydsgaard-IgkwHPb-Vk8-unsplash.jpg"
+                alt="person"
+              />
+            </div>
+
+            <h2 class="author_name">Lorem, ipsum.</h2>
+            <div>
+              <ul class="stats">
+                <li class="stat">
+                  <div>
+                    <p>stat 1:</p>
+                    <p>15</p>
+                  </div>
+                </li>
+                <li class="stat">
+                  <div>
+                    <p>stat 2:</p>
+                    <p>15</p>
+                  </div>
+                </li>
+                <li class="stat">
+                  <div>
+                    <p>stat 3:</p>
+                    <p>153</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <p class="author_quick_sum">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+              obcaecati omnis eius eligendi praesentium explicabo veritatis?
+              Velit praesentium repellendus, magni dolore iure ratione quaerat
+              dolores cumque aliquid dolorem aspernatur tempore.
+            </p>
+          </div>
+          <div class="author_pictures">
+            <div class="main_picture">
+              <img
+                src="./img/ppl/steffen-petermann-1FZf94ONPWQ-unsplash.jpg"
+                alt=""
+              />
+            </div>
+            <div class="additional_pictures">
+              <img
+                src="./img/ppl/steward-masweneng-q2dD3fNjbEQ-unsplash.jpg"
+                alt=""
+              />
+              <div>
+                <p class="additional_pictures_count">5+</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="author_info_and_pictures">
+          <div class="author_info">
+            <div class="author_picture">
+              <img
+                src="./img/ppl/malik-skydsgaard-IgkwHPb-Vk8-unsplash.jpg"
+                alt="person"
+              />
+            </div>
+
+            <h2 class="author_name">Lorem, ipsum.</h2>
+            <div>
+              <ul class="stats">
+                <li class="stat">
+                  <div>
+                    <p>stat 1:</p>
+                    <p>15</p>
+                  </div>
+                </li>
+                <li class="stat">
+                  <div>
+                    <p>stat 2:</p>
+                    <p>15</p>
+                  </div>
+                </li>
+                <li class="stat">
+                  <div>
+                    <p>stat 3:</p>
+                    <p>153</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <p class="author_quick_sum">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+              obcaecati omnis eius eligendi praesentium explicabo veritatis?
+              Velit praesentium repellendus, magni dolore iure ratione quaerat
+              dolores cumque aliquid dolorem aspernatur tempore.
+            </p>
+          </div>
+          <div class="author_pictures">
+            <div class="main_picture">
+              <img
+                src="./img/ppl/steffen-petermann-1FZf94ONPWQ-unsplash.jpg"
+                alt=""
+              />
+            </div>
+            <div class="additional_pictures">
+              <img
+                src="./img/ppl/steward-masweneng-q2dD3fNjbEQ-unsplash.jpg"
+                alt=""
+              />
+              <div>
+                <p class="additional_pictures_count">5+</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div id="lightbox_comments">
+        
+      <div id="lightbox_and_author">
+        <section id="author_lightbox">
+          <div id="author_lightbox_picture">
+            <img
+              src="./img/ppl/andrei-caliman-4Sv_hZpXb4g-unsplash.jpg"
+              alt=""
+            />
+          </div>
+          <div id="author_social_media">
+            <a href="#"><img src="./img/facebook.svg" alt="" /></a>
+            <a href="#"><img src="./img/twitter.svg" alt="" /></a>
+          </div>
+          <div id="author_description">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi
+              nesciunt sapiente error, quasi, cupiditate vitae animi fuga magni
+              doloremque fugit debitis culpa mollitia sit laboriosam sed
+              voluptatum molestias inventore iure?
+            </p>
+          </div>
+        </section>
+        <div id="lightbox">
+          <div id="filter_shadow"></div>
+          <img src="./img/left_arrow.svg" alt="left-arrow" id="left_arrow" />
+          <div id="main_picture">
+            <img
+              src="/img/ppl/hamza-nouasria-66AlPeQoCfQ-unsplash.jpg"
+              alt=""
+              data-picture-status="active"
+            />
+          </div>
+          <img src="./img/right_arrow.svg" alt="right-arrow" id="right_arrow" />
+        </div>
+        <div id="picture_details_share">
+          <section id="picture_details">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Reiciendis nam perspiciatis deserunt necessitatibus qui dolor
+              numquam illum non laborum error recusandae odio distinctio eum
+              omnis, rerum iste nemo earum saepe?
+            </p>
+          </section>
+          <div id="social_share_comments">
+            <a href="#"><img src="/img/chat_bubble.svg" alt="" /></a>
+            <a href="#"><img src="/img/forward.svg" alt="" /></a>
+            <a href="#"><img src="/img/Like.svg" alt="" /></a>
+          </div>
+        </div>
+      </div>
+      <div id="comment_section">
+        <div id="new_comment">
+          <input type="text" placeholder="Add title..." />
+          <textarea
+            name="comment"
+            id="comment"
+            cols="30"
+            rows="10"
+            placeholder="Add comment..."
+          ></textarea>
+          <button id="comment_post_btn" class="button">Post</button>
+        </div>
+
+        <div id="comments">
+          <section class="user_comment">
+            <div class="comment">
+              <div class="comment_img_name">
+                <img
+                  src="/img/ppl/hamza-nouasria-66AlPeQoCfQ-unsplash.jpg"
+                  alt=""
+                  class="comment_photo"
+                />
+                <h2 class="comment_title">Lorem, ipsum.</h2>
+              </div>
+              <p class="comment_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                necessitatibus natus fugit neque dolores alias esse culpa earum,
+                corporis quos nemo possimus velit eveniet accusamus quia soluta
+                labore dolorem impedit!
+              </p>
+              <div class="comment_links_likes">
+                <div class="comment_socials">
+                  <a href="#"><img src="./img/facebook.svg" alt="" /></a>
+                  <a href="#"><img src="./img/twitter.svg" alt="" /></a>
+                </div>
+                <div class="comment_comments_btn">
+                  <a href="#"><img src="/img/chat_bubble.svg" alt="" /></a>
+                  <p class="comment_comments_count">1</p>
+                  <a href="#"><img data-show-arrow="more" src="/img/dowdrop_arrow.svg" alt="" /></a>
+                  <p class="show_more_less" data-show-text>Show more</p>
+                </div>
+                <div class="likes_dislikes">
+                  <a href="#" id="comment_like_btn"
+                    ><img src="/img/thumbs_up.svg" alt=""
+                  /></a>
+                  <p class="likes_dislike_count">152</p>
+                  <a href="#" id="comment_dislike_btn"
+                    ><img src="/img/thumbs_down.svg" alt=""
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <section class="comment_comments">
+              <div class="comment_img_name">
+                <img
+                src="/img/ppl/andrei-caliman-T2UnbSfig3o-unsplash.jpg"
+                alt=""
+                class="comment_photo"
+              />
+              <h2 class="comment_title">Lorem, ipsum.</h2>
+              </div>
+              <p class="comment_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                necessitatibus natus fugit neque dolores alias esse culpa earum,
+                corporis quos nemo possimus velit eveniet accusamus quia soluta
+                labore dolorem impedit!
+              </p>
+              <div class="comment_links_likes">
+                <div class="comment_socials">
+                  <a href="#"><img src="./img/facebook.svg" alt="" /></a>
+                  <a href="#"><img src="./img/twitter.svg" alt="" /></a>
+                </div>
+                <div class="likes_dislikes">
+                  <a href="#" id="comment_like_btn"
+                    ><img src="/img/thumbs_up.svg" alt=""
+                  /></a>
+                  <p class="likes_dislike_count">-52</p>
+                  <a href="#" id="comment_dislike_btn"
+                    ><img src="/img/thumbs_down.svg" alt=""
+                  /></a>
+                </div>
+              </div>
+            </section>
+            <section class="comment_comments">
+              <div class="comment_img_name">
+                <img
+                src="/img/ppl/andrei-caliman-T2UnbSfig3o-unsplash.jpg"
+                alt=""
+                class="comment_photo"
+              />
+              <h2 class="comment_title">Lorem, ipsum.</h2>
+              </div>
+              <p class="comment_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                necessitatibus natus fugit neque dolores alias esse culpa earum,
+                corporis quos nemo possimus velit eveniet accusamus quia soluta
+                labore dolorem impedit!
+              </p>
+              <div class="comment_links_likes">
+                <div class="comment_socials">
+                  <a href="#"><img src="./img/facebook.svg" alt="" /></a>
+                  <a href="#"><img src="./img/twitter.svg" alt="" /></a>
+                </div>
+                <div class="likes_dislikes">
+                  <a href="#" id="comment_like_btn"
+                    ><img src="/img/thumbs_up.svg" alt=""
+                  /></a>
+                  <p class="likes_dislike_count"></p>
+                  <a href="#" id="comment_dislike_btn"
+                    ><img src="/img/thumbs_down.svg" alt=""
+                  /></a>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <section class="user_comment">
+            <div class="comment">
+              <div class="comment_img_name">
+                <img
+                  src="/img/ppl/hamza-nouasria-66AlPeQoCfQ-unsplash.jpg"
+                  alt=""
+                  class="comment_photo"
+                />
+                <h2 class="comment_title">Lorem, ipsum.</h2>
+              </div>
+              <p class="comment_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                necessitatibus natus fugit neque dolores alias esse culpa earum,
+                corporis quos nemo possimus velit eveniet accusamus quia soluta
+                labore dolorem impedit!
+              </p>
+              <div class="comment_links_likes">
+                <div class="comment_socials">
+                  <a href="#"><img src="./img/facebook.svg" alt="" /></a>
+                  <a href="#"><img src="./img/twitter.svg" alt="" /></a>
+                </div>
+                <div class="comment_comments_btn">
+                  <a href="#"><img src="/img/chat_bubble.svg" alt="" /></a>
+                  <p class="comment_comments_count">1</p>
+                  <a href="#"><img src="/img/dowdrop_arrow.svg" alt="" /></a>
+                  <p class="show_more_less" data-show="more">Show more</p>
+                </div>
+                <div class="likes_dislikes">
+                  <a href="#" id="comment_like_btn"
+                    ><img src="/img/thumbs_up.svg" alt=""
+                  /></a>
+                  <p class="likes_dislike_count"></p>
+                  <a href="#" id="comment_dislike_btn"
+                    ><img src="/img/thumbs_down.svg" alt=""
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <section class="comment_comments">
+              <div class="comment_img_name">
+                <img
+                src="/img/ppl/andrei-caliman-T2UnbSfig3o-unsplash.jpg"
+                alt=""
+                class="comment_photo"
+              />
+              <h2 class="comment_title">Lorem, ipsum.</h2>
+              </div>
+              <p class="comment_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                necessitatibus natus fugit neque dolores alias esse culpa earum,
+                corporis quos nemo possimus velit eveniet accusamus quia soluta
+                labore dolorem impedit!
+              </p>
+              <div class="comment_links_likes">
+                <div class="comment_socials">
+                  <a href="#"><img src="./img/facebook.svg" alt="" /></a>
+                  <a href="#"><img src="./img/twitter.svg" alt="" /></a>
+                </div>
+                <div class="likes_dislikes">
+                  <a href="#" id="comment_like_btn"
+                    ><img src="/img/thumbs_up.svg" alt=""
+                  /></a>
+                  <p class="likes_dislike_count"></p>
+                  <a href="#" id="comment_dislike_btn"
+                    ><img src="/img/thumbs_down.svg" alt=""
+                  /></a>
+                </div>
+              </div>
+            </section>
+          </section>
+
+        </div>
+      </div>
+      </div>
+    </main>
+    <footer>
+      
+    </footer>
+  </body>
+</html>
