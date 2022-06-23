@@ -1,2 +1,64 @@
 @import url(/Portfolio/basics.css);
 
+
+main {
+    width: 60%;
+    margin: auto;
+}
+
+#top_section {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 65%;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+#bottom_section {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    max-width: 65%;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+#city_picture_, #personal_photo, #bottom_picture_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about_form_section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 1.5rem;
+    background-color: var(--green-colour);
+    border-radius: 20px;
+    gap: 1rem;
+    margin: 4rem auto;
+    box-shadow: 0 0 2px 0;
+    position: relative;
+    padding-bottom: 4rem;
+}
+#about_form_section button {
+    width: 12.5%;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 2px 0;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+img {
+    border-radius: 10px;
+    box-shadow: 0 0 4px 0;
+}
+#about_form_section input, #about_form_section textarea {
+    border-radius: 10px;
+    box-shadow: 0 0 4px 0;
+    border: none;
+    padding: 0.5rem 1rem;
+}

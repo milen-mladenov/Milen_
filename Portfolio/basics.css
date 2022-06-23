@@ -6,6 +6,7 @@
 }
 
 body {
+    position: relative;
     margin: 0;
     padding: 0;
 }
@@ -72,7 +73,6 @@ footer {
     background-color: var(--gray-colour);
     display: flex;
     position: absolute;
-    bottom: 0;
     width: 100vw;
     margin: auto;
     justify-content: center;
@@ -89,3 +89,4 @@ footer ul {
     display: flex;
     gap: 2.5rem;
 }
+
