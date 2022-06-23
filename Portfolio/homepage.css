@@ -1,104 +1,46 @@
+@import url(/Portfolio/basics.css);
+
 body {
     width: 100vw;
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-header {
-    margin: 0;
-    padding: 0;
-    display: inline-flex;
-    width: 100%;
-    text-decoration: none;
-    align-items: center;
-    flex-direction: column-reverse;
-
 }
 
 main {
+    display: flex;
     position: relative;
-    top: 0;
+    width: 60%;
     margin: auto;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    padding-top: 150px;
-    padding-bottom: 120px;
+    margin-top: 10%;
 }
 
-h2 {
-    margin: 0;
-    padding: 0;
-    display: inline-flex;
-    background-color: #772c61bf;
-    width: 100%;
-    justify-content: center;
-}
-
-a {
-    position: relative;
-    text-decoration: none;
-}
-
-a::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 4px;
-    background-color: #18272F;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .3s ease-in-out;
-}
-
-a:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
-}
-
-.navigation {
-    display: inline-flex;
-    padding: 0;
-    background-color: #772c61c5;
-    text-align: right;
-    width: 100%;
-    margin: auto;
-    justify-content: space-around;
-}
-
-ul>li {
-    list-style: none;
-    display: inline-flex;
-    flex-direction: row;
-    margin: 1em 3em;
-}
-
-.navigation li a {
-    color: white;
-    font-size: 2rem;
-
+main img {
+    border-radius: 20px;
+    box-shadow: 0 0 4px 0;
 }
 
 aside {
-    border: 4px solid salmon;
-    justify-self: center;
-    border-radius: 15px;
+    position: absolute;
+    right: 2rem;
     max-width: 15%;
-    margin-right: 50px;
-
-    float: right;
+    padding: 2.5rem;
+    background-color: var(--gray-colour);
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px 0;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
+main section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    background-color: var(--gray-colour);
+    max-width: 50%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px 0;
 }
 
+#section_pictures {
+    display: flex;
+    margin: auto;
+    gap: 2.5rem;
+}
