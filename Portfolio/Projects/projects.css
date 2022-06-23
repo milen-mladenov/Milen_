@@ -1,0 +1,95 @@
+@import url(/Portfolio/basics.css);
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+#projects {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 15rem 0;
+    gap: 2.5rem;
+}
+.games_link_row {
+    display: flex;
+    gap: 2.5rem;
+}
+.games_link_row p {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+.games_link_row div:nth-child(2n + 2) {
+    transform: translateY(50%);
+}
+
+#comment_section {
+    border-radius: 20px ;
+    padding: 1.5rem;
+    background-color: aqua;
+    width: 60%;
+    margin: auto;
+}
+
+#comments {
+    width: 80%;
+    padding: 1.5rem;
+    background-color: beige;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+}
+
+#comment_form_section {
+    padding: 2rem;
+    background-color: blue;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 1rem;
+    position: relative;
+    padding-bottom: 3.5rem;
+    margin-bottom: 4rem;
+}
+
+#comment_form_section input, #comment_form_section textarea {
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+}
+
+#comment_form_section button {
+    width: 15%;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+
+.user_comment_right, .user_comment_left {
+    max-width: 50%;
+    padding: 1rem;
+    background-color: blueviolet;
+    position: relative;
+    height: 10rem;
+    display: flex;
+}
+
+#comments > div:nth-child(2n + 2){
+    right: -50%;
+    background-color: black;
+}
+
+#comments img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#comments p {
+
+}
