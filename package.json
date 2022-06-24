@@ -1,0 +1,24 @@
+{
+  "name": "milen_",
+  "version": "1.0.0",
+  "description": "- 👋 Hi, I’m Milen Mladenov from Lom, Montana. Currently living in Sofia.\r - \r - 👀 I’m interested in:\r - - Music, photography, photo-editing, gaming and binge-watching TV series / YouTube series.\r - - (on a more serious note) I'm learning how to code for a career change and also becouse i've been a semi-hardcore gamer in diferent game genres(so i know what's good, and wanted in most games), that's why i want eventually to start creating and working on games.\r - \r - 🌱 I’m currently learning JavaScript, HTML and CSS in SoftUni. After i finish that path i won't be stopping soon! Eventually i want to finishh Phyton,C# and C++, learn - how to work with, Unreal Engine, Unity and whatever comes next. \r - \r - 💞️ I’m looking to collaborate on ...\r - \r - 📫 How to reach me:\r - -Email: milen_s_mladenov@yahoo.co.uk\r - -Discord tag: Hybrid#7918\r - -PhoneNumber: +359 889 407233 \r - -+WhatsApp and Viber\r - \r - --Social Media:\r - --LinkedIn: https://www.linkedin.com/in/milen-mladenov-47342b159/ \r - --FaceBook: https://www.facebook.com/milen.mladenov2 \r - --Twitter: https://twitter.com/mladenov_milen1",
+  "main": "index.js",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milen-mladenov/Milen_.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milen-mladenov/Milen_/issues"
+  },
+  "homepage": "https://github.com/milen-mladenov/Milen_#readme"
+}
