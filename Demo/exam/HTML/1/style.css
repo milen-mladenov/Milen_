@@ -1,0 +1,91 @@
+:root {
+    --red-colour: #CB1A1E;
+    --red-border: #CC242A;
+    --heading-colour: #000000;
+    --text-colour: #240800;
+
+    font-family: 'Lobster Two', cursive;
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+    margin: auto;
+}
+
+#top_section {
+    position: relative;
+    margin: 0 auto;
+}
+
+#top_section>h1 {
+    font-size: 65px;
+    margin-bottom: 0;
+    font-weight: 500;
+    letter-spacing: 4.5px;
+}
+
+#top_section>p {
+    color: var(--red-colour);
+    text-align: right;
+    margin-top: 0;
+    font-size: 30px;
+    transform: translateX(20px);
+}
+
+#cards svg {
+    max-width: 20px;
+    fill: #CB1A1E;
+}
+
+#cards {
+    display: flex;
+}
+
+.card {
+    padding: 1rem;
+    text-align: center;
+    width: 30%;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px 20px 0 0;
+}
+
+.card_text {
+    padding-top: 1rem;
+    border-top: 2.5px solid var(--red-border);
+    font-size: 1.3rem;
+    color: var(--text-colour);
+}
+
+.card_text_content {
+    height: 250px;
+    position: relative;
+}
+
+.continue_reading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.continue_reading p {
+    font-size: 1.3rem;
+    letter-spacing: 1.25px;
+}
+
+.card_text_content h2 {
+    font-weight: 700;
+    letter-spacing: 1px;
+}

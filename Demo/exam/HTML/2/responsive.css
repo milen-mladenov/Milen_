@@ -1,0 +1,51 @@
+
+
+@media screen and (max-width:600px) {
+    body, main {
+        width: 100%;
+        margin: 0;
+    }
+    main > section {
+        margin: 0 auto;
+    }
+    main .left-to-right article {
+        max-width: 65%;
+        border-radius: 30px;
+    }
+
+    .left-to-right:first-child {
+        padding: 2rem;
+    }
+
+    main section:nth-child(2), main section:nth-child(4) {
+        margin: 0;
+        padding: 0 3rem;
+        flex-direction: column;
+    }
+
+    button {
+        display: none;
+    }
+
+    section form label {
+        width: 100vw;
+    }
+    main section:nth-child(2) article, main section:nth-child(4) article {
+        margin: auto;
+    }
+    form {
+        width: 100%;
+    }
+    article form label {
+        width: 100%;
+    }
+    article form label input, article form label textarea {
+        width: 100%;
+    }
+
+    /* znam... ujasno e... */
+    #send {
+        transform: translateX(90%);    
+    }
+
+}
