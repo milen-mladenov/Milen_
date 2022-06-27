@@ -1,0 +1,43 @@
+:root {
+    --prime-yellow-light: #FFE3A2;
+}
+
+body {
+    margin: 0;
+}
+
+#input_form_section {
+    margin: auto;
+    max-width: 55%;
+    padding: 2rem;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    background-color: var(--prime-yellow-light);
+    border-radius: 20px;
+}
+
+#registration_form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+#registration_form label {
+    position: relative;
+}
+#registration_form input {
+    border: none;
+    border-radius: 3px;
+    padding: 0.3rem;
+}
+.error_msg {
+    position: absolute;
+    z-index: 1;
+    margin: 3px 0;
+    left: 0;
+    color: red;
+}
+.error_msg:empty {
+    display: none;
+    
+}
