@@ -1,0 +1,29 @@
+@import url(/reset.css);
+
+.form_section {
+    position: relative;
+    padding: 1.5rem;
+    margin: auto;
+    max-width: 60%;
+    background-color: aqua;
+}
+
+.form_option_one {
+    display: grid;
+    grid-template-areas: "label label label";
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.form_option_one input {
+    height: 1.2rem;
+    border: none;
+    box-shadow: 0 0 4px 0;
+    border-radius: 5px;
+}
+
+.form_buttons {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
