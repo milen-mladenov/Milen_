@@ -6,32 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="./script.js" defer></script>
+    <script type="module" src="./script.js" defer></script>
   </head>
   <body>
     <section id="input_form_section">
       <form action="registration" id="registration_form">
-        <label for="first_name" id="first_name_label"><input
+        <label for="first_name" id="first_name_label">
+          <input
             type="text"
             name="first_name"
             id="first_name_input_field"
             placeholder="first Name..."
           />
-        <p class="error_msg"></p></label>
-        <label for="Last_name" id="Last_name_label"><input
+          <p class="error_msg"></p>
+        </label>
+        <label for="last_name" id="last_name_label">
+          <input
             type="text"
-            name="Last_name"
-            id="Last_name_input_field"
-            placeholder="Last Name..."
-          />
-        <p class="error_msg"></p></label>
+            name="last_name"
+            id="last_name_input_field"
+            placeholder="Last Name..." />
+          <p class="error_msg"></p>
+    </label>
         <label for="email" id="email_label">
-            <input type="text" name="email" id="email_input_field" placeholder="Email..." />
-            <p class="error_msg"></p>
+          <input
+            type="text"
+            name="email"
+            id="email_input_field"
+            placeholder="Email..."
+          />
+          <p class="error_msg"></p>
         </label>
 
         <label for="email_confirmation" id="email_confirm">
-            <input
+          <input
             type="text"
             name="email_confirmation"
             id="email_input_field_confirmation"
@@ -40,33 +48,65 @@
           <p class="error_msg"></p>
         </label>
 
-        <label for="password_input">
-            <input type="password" name="password_input" id="password_input" placeholder="Password..."/>
-            <p class="error_msg"></p>
+        <label for="password_input" id="password_input">
+          <input
+            type="password"
+            name="password_input"
+            id="user_password_input"
+            placeholder="Password..."
+          />
+          <p class="error_msg"></p>
         </label>
 
-        <label for="password_input_confirmation">
-            <input
-          type="password"
-          name="password_input_confirmation"
-          id="password_input_confirmation"
-          placeholder="Confirm Password..."
-        />
-        <p class="error_msg"></p>
+        <label for="password_input_confirmation" id="password_input_confirmation">
+          <input
+            type="password"
+            name="password_input_confirmation"
+            id="user_password_input_confirmation"
+            placeholder="Confirm Password..."
+          />
+          <p class="error_msg"></p>
         </label>
-        
-        
+
         <label for="country" id="country_select">
-            <select name="country" id="country">
-                <option value="select">Select Country...</option>
-                <option value="bg">BG</option>
-                <option value="en">EN</option>
-                <option value="uk">UK</option>
-              </select>
-              <p class="error_msg"></p>
+          <select name="country" id="user_country_input">
+            <option value="select">Select Country...</option>
+            <option value="bg">BG</option>
+            <option value="en">EN</option>
+            <option value="uk">UK</option>
+          </select>
+          <p class="error_msg"></p>
         </label>
-        
+        <label for="city" id="user_city">
+          <input
+            type="text"
+            name="city"
+            id="user_city_input"
+            placeholder="City..."
+          />
+          <p class="error_msg"></p>
+        </label>
+
         <button>Submit</button>
+      </form>
+      <div id="show_more">
+        <p>Show more...</p>
+          <input type="checkbox" id="more_info_checkbox">
+      </div>
+      <form action="additional_information" id="additional_information_form">
+        
+        <label for="gender" id="gender_select">
+            Gender
+            <label for=""><input type="radio" name="gender" id="gender_male">M</label>
+            <label for=""><input type="radio" name="gender" id="gender_female">F</label>
+        </label>
+        <label for="more_info" id=""> 
+            <textarea name="more_info" id="more_information" cols="30" rows="10" placeholder="More Information about yourself..."></textarea>
+        </label>
+        <label for="newsseller">
+            Subscribe to newsseller
+            <input type="checkbox" id="newsseller">
+        </label>
       </form>
     </section>
   </body>

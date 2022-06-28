@@ -8,8 +8,8 @@ body {
 
 #input_form_section {
     margin: auto;
-    max-width: 55%;
-    padding: 2rem;
+    width: 55%;
+    padding: 2.5rem;
     position: absolute;
     top: 25%;
     left: 25%;
@@ -20,8 +20,9 @@ body {
 #registration_form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
+
 #registration_form label {
     position: relative;
 }
@@ -40,4 +41,19 @@ body {
 .error_msg:empty {
     display: none;
     
+}
+#additional_information_form {
+    display: none;
+    flex-direction: column;
+    background-color: aquamarine;
+    padding: 1rem;
+}
+#show_more {
+    display: flex;
+    align-items: center;
+}
+#more_information {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 2px 0;
 }

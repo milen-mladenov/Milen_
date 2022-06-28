@@ -1,46 +1,113 @@
-let formSubmitButton = document.querySelector("form button");
+import * as inputCheck from "./scripts/formValidation.js";
 
+const userFirstName = document.getElementById("first_name_input_field");
+const userLastName = document.getElementById("last_name_input_field");
+const userEmail = document.getElementById("email_input_field");
+const userEmailConfirm = document.getElementById(
+  "email_input_field_confirmation"
+);
+const userPassword = document.getElementById("user_password_input");
+const userPasswordConfirm = document.getElementById(
+  "user_password_input_confirmation"
+);
+const userCountry = document.getElementById("user_country_input");
+const userCity = document.getElementById("user_city_input");
 
+const formSubmitButton = document.querySelector("form button");
+const moreInfoCheckbox = document.getElementById("more_info_checkbox");
+
+class User {
+  constructor(user, email, password) {
+    this.user = user;
+    this.email = email;
+    this.password = password;
+  }
+
+  moreUserInfo(moreInformation) {
+    this.more = moreInformation;
+  }
+
+}
+
+moreInfoCheckbox.addEventListener("change", () => {
+  let additionalInfoSection = document.getElementById(
+    "additional_information_form"
+  );
+
+  if (moreInfoCheckbox.checked) {
+    additionalInfoSection.style.display = "flex";
+    return;
+  }
+  additionalInfoSection.style.display = "none";
+
+  console.log(userPassword.value);
+});
 
 formSubmitButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    formValidation()
-    
-})
+  e.preventDefault();
 
-function formValidation(){
+  if (!formValidation()) {
+    return;
+  }
+});
 
-    let userFirstName = document.getElementById("first_name_input_field");
-    let userLastName = document.getElementById("")
-    let userEmail = document.getElementById("email_input_field");
-    let userEmailConfirm = document.getElementById("email_input_field_confirmation");
+function formValidation() {
+  let nameCheck = inputCheck.nameValidation(userFirstName, userLastName);
+  let emailCheck = inputCheck.emailValidation(userEmail, userEmailConfirm);
+  let locationCheck = inputCheck.locationValidation(userCountry, userCity);
+  let passwordCheck = inputCheck.passwordValidation(
+    userPassword,
+    userPasswordConfirm
+  );
 
-    let emailIsTrue = true;
+  if (nameCheck) {
+    document.querySelector("#first_name_label .error_msg").textContent = ``;
+    document.querySelector("#last_name_label .error_msg").textContent = ``;
+  }
+  if (emailCheck) {
+   
+    document.querySelector("#email_label .error_msg").textContent = ``;
+    document.querySelector("#email_confirm .error_msg").textContent = ``;
+  }
+  if (passwordCheck) {
+    document.querySelector(
+      "#password_input .error_msg"
+    ).textContent = ``;
+    document.querySelector(
+      "#password_input_confirmation .error_msg"
+    ).textContent = ``;
+  }
+  if (locationCheck) {
+    document.querySelector(
+      "#country_select .error_msg"
+    ).textContent = ``;
+    document.querySelector(
+      "#user_city .error_msg"
+    ).textContent = ``;
+  }
 
-    try {
-        if(userFirstName.value == "") throw Error("Please fill up the field");
-        if(userFirstName.value.length <= 2) throw Error("Name is too short");
-    } catch(e) {
-        document.querySelector("#first_name_label .error_msg").textContent = `${e.message}`
-        userFirstName.style.borderBottomColor = "red"
-    }
+  let passedValidation =
+    nameCheck && emailCheck && locationCheck && passwordCheck;
 
-    try {
-        if(userEmail.value == "") throw Error("Please fill up the field");
-        if(userEmail) throw Error("not email");
+  if (passedValidation) createUser();
+}
 
-    } catch (e) {
-        emailIsTrue = false;
-        document.querySelector("#email_label .error_msg").textContent = `${e.message}`
-        userFirstName.style.borderBottomColor = "red"
-    }
+function createUser() {
+  let moreInformation = [];
+  let country = userCountry.value;
+  let city = userCity.value;
 
-    try {
-        if(userEmailConfirm.value == "") throw Error("Please fill up the field")
-        if(userEmailConfirm.value !== userEmail.value || !emailIsTrue) throw Error("emails not the same")
-    } catch (e) {
-        document.querySelector("#email_confirm .error_msg").textContent = `${e.message}`
-    }
+  let user = `${userFirstName.value} ${userLastName.value}`;
+  let password = `${userPassword.value}`;
+  let email = `${userEmail.value}`;
+  let user1 = new User(user,email,password);
+
+  if (moreInfoCheckbox.checked) {
+    moreInformation.push(inputCheck.moreInformation());
+    moreInformation.push({ country, city });
+  }
 
 
+ user1.moreUserInfo(moreInformation)
+console.log(user1);
 }
