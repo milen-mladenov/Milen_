@@ -1,17 +1,21 @@
+export {
+  nameValidation,
+  locationValidation,
+  passwordValidation,
+  moreInformation
+};
+import * as validation from './validations.js'
+
 function nameValidation(userFirstName, userLastName) {
   let nameIsTrue = true;
   let firstName = userFirstName.value;
   let lastName = userLastName.value;
 
-  let namePattern = /^[A-Za-z]+$/;
-  let firstOnlyLetters = namePattern.exec(firstName);
-  let lastOnlyLetters = namePattern.exec(lastName);
-
   // check if name has numbers and length > 2
   try {
     if (firstName == "") throw Error("Please fill up the field!");
     if (userFirstName.length <= 2) throw Error("Name is too short!");
-    if (firstOnlyLetters == null) throw Error("Name must not contain numbers!");
+    if (validation.isOnlyLetters(firstName) == null) throw Error("Name must not contain numbers!");
   } catch (e) {
     nameIsTrue = false;
     document.querySelector(
@@ -22,60 +26,30 @@ function nameValidation(userFirstName, userLastName) {
   try {
     if (lastName.value == "") throw Error("Please fill up the field");
     if (lastName.length <= 2) throw Error("Name is too short");
-    if (lastOnlyLetters == null) throw Error("Name must not contain numbers!");
+    if (validation.isOnlyLetters(lastName) == null) throw Error("Name must not contain numbers!");
   } catch (e) {
     nameIsTrue = false;
     document.querySelector(
       "#last_name_label .error_msg"
     ).textContent = `${e.message}`;
   }
-
+  
   return nameIsTrue;
-}
-
-function emailValidation(userEmail, userEmailConfirm) {
-  let emailPattern = /^\w+@[A-Za-z]+.[A-Za-z]{2,}$/;
-  let emailIsTrue = true;
-  let email = userEmail.value;
-  let confirmation = userEmailConfirm.value;
-
-  // confirming email is a valid input
-  try {
-    if (email == "") throw Error("Please fill up the field");
-    if (emailPattern.exec(email) == null) throw Error("not email");
-  } catch (e) {
-    emailIsTrue = false;
-    document.querySelector(
-      "#email_label .error_msg"
-    ).textContent = `${e.message}`;
-  }
-
-  // confirming the emails are the same
-  try {
-    if (confirmation == "") throw Error("Please fill up the field");
-    if (confirmation !== email) throw Error("emails not the same");
-  } catch (e) {
-    emailIsTrue = false;
-    document.querySelector(
-      "#email_confirm .error_msg"
-    ).textContent = `${e.message}`;
-  }
-
-  return emailIsTrue;
 }
 
 function passwordValidation(userPassword, userPasswordConfirm) {
   let passwordIstrue = true;
   let password = userPassword.value;
   let confirmation = userPasswordConfirm.value;
+
   try {
     if (password.length < 8)
       throw Error("Password must be at least 8 symbols!");
-    if (!capitalLetter(password))
+    if (!validation.withCapitalLetter(password))
       throw Error("Password must have at least one capital letter");
-    if (!special(password))
+    if (!validation.withSpecial(password))
       throw Error("Password must have at least one special cymbol");
-    if (!number(password))
+    if (!validation.withNumber(password))
       throw Error("Password must have at least one number");
   } catch (e) {
     passwordIstrue = false;
@@ -85,7 +59,7 @@ function passwordValidation(userPassword, userPasswordConfirm) {
   }
 
   try {
-    if (password !== confirmation) throw Error("Passwords don't match");
+    if (validation.areTheSame(password,confirmation)) throw Error("Passwords don't match");
   } catch (e) {
     passwordIstrue = false;
     document.querySelector(
@@ -110,7 +84,7 @@ function locationValidation(userCountry, userCity) {
   }
 
   try {
-    if (number(city)) throw Error("Name must not contain numbers!");
+    if (validation.withNumber(city)) throw Error("Name must not contain numbers!");
     if(city == "") throw Error("Please add a valid location!")
   } catch (e) {
     locationIsTrue = false;
@@ -121,32 +95,6 @@ function locationValidation(userCountry, userCity) {
 
   return locationIsTrue;
 }
-
-function capitalLetter(n) {
-  let capitalLetterPattern = /[A-Z]{1,}/;
-  let capitalLetterTrue = false;
-  if (capitalLetterPattern.exec(n) !== null) {
-    capitalLetterTrue = true;
-  }
-  return capitalLetterTrue;
-}
-function special(n) {
-  let specialCymbolPattern = /\W+/;
-  let specialCymbolTrue = false;
-  if (specialCymbolPattern.exec(n) !== null) {
-    specialCymbolTrue = true;
-  }
-  return specialCymbolTrue;
-}
-function number(n) {
-  let numberPattern = /[0-9]+/;
-  let numberTrue = false;
-  if (numberPattern.exec(n) !== null) {
-    numberTrue = true;
-  }
-  return numberTrue;
-}
-
 
 function moreInformation() {
     let additionalInfo = {}
@@ -169,12 +117,3 @@ function moreInformation() {
     }
     return additionalInfo
 }
-
-
-export {
-  nameValidation,
-  emailValidation,
-  locationValidation,
-  passwordValidation,
-  moreInformation
-};
