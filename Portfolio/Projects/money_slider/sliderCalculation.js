@@ -1,35 +1,5 @@
-const timeSlider = document.getElementById("time_slider");
-const amountSlider = document.getElementById("loan_slider");
-
-const timeForLoan = document.getElementById("time_length");
-const loanAmount = document.getElementById("loan_amount");
-
 const montlyPayment = document.getElementById("calculated_amount");
-const totalMonths = document.getElementById("loan_period");
 const totalMoneyOwed = document.getElementById("total_owed");
-
-let months = timeSliderValue(timeSlider);
-let amount = amountSliderValue(amountSlider) * 1000;
-
-window.addEventListener("load", () => {
-  totalMonths.textContent = timeSliderValue(timeSlider);
-});
-
-timeSlider.addEventListener("input", () => {
-  timeForLoan.textContent = timeSliderValue(timeSlider);
-  totalMonths.textContent = timeSliderValue(timeSlider);
-  months = timeSliderValue(timeSlider);
-  moneyCalculator(months, amount);
-  console.log(timeSlider.value);
-});
-
-amountSlider.addEventListener("input", () => {
-  loanAmount.textContent = `${amountSliderValue(amountSlider)} 000`;
-  amount = amountSliderValue(amountSlider) * 1000;
-  moneyCalculator(months, amount);
-});
-
-moneyCalculator(months, amount);
 
 function moneyCalculator(months, amount) {
   months = Number(months);
@@ -141,4 +111,11 @@ function timeSliderValue(slider) {
   let currentValue = Math.floor(slider.value / 4.16);
 
   return currentValue + 12;
+}
+
+export {
+    moneyCalculator,
+    percentageCalculator,
+    amountSliderValue,
+    timeSliderValue
 }
