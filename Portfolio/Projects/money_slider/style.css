@@ -1,0 +1,94 @@
+:root {
+  --light-blue: #22a9cc;
+  --dark-blue: #2e4c9f;
+  --body-gray: #616c8d;
+  --button-red: #ee5050;
+  --light-green: #a5eb42;
+  --dark-green: #729e34;
+  --nav-light-blue: #f6fbff;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--body-gray);
+}
+
+#fast_slider_calculator {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-around;
+  background-color: var(--nav-light-blue);
+  height: 15rem;
+}
+.slider_section,
+.slider_calculator {
+  position: relative;
+  width: 15rem;
+  padding: 0rem 2rem;
+}
+.slider_section {
+  margin-top: 2rem;
+}
+.slider_content > p {
+  position: absolute;
+  bottom: 1rem;
+  opacity: 0.5;
+}
+#loan_and_currency,
+#time_length_section {
+  display: flex;
+  gap: 0.5rem;
+}
+.slider_calculator {
+  background-color: var(--dark-blue);
+}
+.slider_calculator h3 {
+  color: var(--light-green);
+  margin-top: 1.25rem;
+}
+.slider_calculator div,
+.slider_calculator h2 {
+  display: flex;
+  gap: 0.5rem;
+  color: white;
+}
+#total_money_owed {
+  position: relative;
+  margin-top: 1rem;
+  font-size: 18px;
+}
+#total_money_owed::before {
+  content: "";
+  border-bottom: 5.5px solid white;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: -20px;
+}
+
+#loan_range,
+#time_range {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--button-red);
+  margin: 2rem 0 1rem 0;
+}
+
+.slider::-webkit-slider-thumb {
+  position: relative;
+  -webkit-appearance: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #a5eb42 0% 0% no-repeat padding-box;
+  border: 1px solid #616c8d;
+  opacity: 1;
+  content: "2231";
+}
