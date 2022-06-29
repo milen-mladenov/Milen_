@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="/script.js" defer></script>
+    <script type="module" src="/sliderCalculation.js" defer></script>
+</head>
+<body>
+    <section id="fast_slider_calculator">
+        <div class="slider_section">
+          <div class="slider_content">
+            <h3>Размер на кредит</h3>
+            <div id="loan_and_currency">
+              <h2 id="loan_amount">25 000</h2>
+              <h2 class="currency_type">лв.</h2>
+            </div>
+            <input
+              type="range"
+              name="loan_slider"
+              id="loan_slider"
+              class="slider"
+              step="8.33"
+              value="33.32"
+            />
+            <div id="loan_range">
+              <p>5 000лв</p>
+              <p>200 000лв</p>
+            </div>
+            <p>Показателен пример</p>
+          </div>
+        </div>
+        <div class="slider_section">
+          <div class="slider_content">
+            <h3>Размер на кредит</h3>
+            <div id="time_length_section">
+              <h2 id="time_length">18</h2>
+              <h2>месеца</h2>
+            </div>
+            <input
+              type="range"
+              name="time_slider"
+              id="time_slider"
+              class="slider"
+              step="4.16"
+              value="24.96"
+            />
+            <div id="time_range">
+              <p>12 месеца</p>
+              <p>36 месеца</p>
+            </div>
+          </div>
+        </div>
+        <div class="slider_calculator">
+          <h3>Месечна вноска</h3>
+          <div class="monthly_amount_calculator">
+            <h2 id="calculated_amount">XXX XXX</h2>
+            <h2 class="currency_type">лв.</h2>
+          </div>
+          <h3>Период</h3>
+          <div id="loan_period_calculator">
+            <h2 id="loan_period">XX</h2>
+            <h2>месеца</h2>
+          </div>
+          <div id="total_money_owed">
+            <p>Дължима сума:</p>
+            <p id="total_owed">XXX XXX</p>
+            <p class="currecy_type">лв.</p>
+          </div>
+        </div>
+      </section>
+</body>
+</html>
