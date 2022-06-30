@@ -5,11 +5,12 @@ export {
   emailValidation,
   isOnlyLetters,
   areTheSame,
-  personalNumber,
+  personalIDNumber,
   personalIDCardNumber,
   isValidEIK,
   isValidVAT,
-  isValidPhoneNumber
+  isValidPhoneNumber,
+  fileTypeValidation
 };
 
 function withCapitalLetter(n) {
@@ -42,7 +43,7 @@ function withNumber(n) {
 function emailValidation(n) {
   let emailPattern = /^\w+@[A-Za-z]+.[A-Za-z]{2,}$/;
   let emailIsTrue = true;
-  let email = n.value;
+  let email = n;
 
   // confirming email is a valid input
   try {
@@ -56,10 +57,14 @@ function emailValidation(n) {
 }
 
 function isOnlyLetters(n) {
-  let isTrue = false;
-  let pattern = /^[A-Za-z]+$/;
 
-  if (pattern.exec(n) == null) return (isTrue = true);
+  let pattern = /^[A-Za-z]+$/g;
+
+  if (pattern.exec(n) == null) {
+    return false
+  } 
+  return  true
+  
 }
 
 function areTheSame(a, b) {
@@ -69,7 +74,7 @@ function areTheSame(a, b) {
   return false;
 }
 
-function personalNumber(n) {
+function personalIDNumber(n) {
   if (n.length < 10) {
     return false;
   }
@@ -100,12 +105,15 @@ function personalNumber(n) {
     year = `19${year}`;
   }
 
+  let isLeapYear = checkLeapYear(year);
   let valMonth = isValidMonth(month);
   let trueDate = isValidDate(date, month);
 
   function isValidDate(date, month) {
-    let thirtyDays = [04, 06, 09, 11];
-    let thirtyOneDays = [01, 03, 05, 07, 08, 10, 12];
+    date = Number(date)
+    month = Number(month)
+    let thirtyDays = [4, 6, 9, 11];
+    let thirtyOneDays = [1, 3, 5, 7, 8, 10, 12];
     let isTrue = false;
     if (thirtyDays.includes(month)) {
       if (date < 31) {
@@ -115,8 +123,8 @@ function personalNumber(n) {
       if (date < 32) {
         return true;
       }
-    } else if (month == 02) {
-      if (checkLeapYear(year)) {
+    } else if (month == 2) {
+      if (isLeapYear) {
         if (date < 30) {
           return true;
         }
@@ -251,3 +259,19 @@ function isValidPhoneNumber(n) {
 
   return true;
 }
+
+function fileTypeValidation(arr, file) {
+  
+  let fileSplit = file.split(".");
+  let fileExtension = fileSplit[fileSplit.length -1];
+  
+  for (const type of arr) {
+    if(type.toUpperCase() == fileExtension.toUpperCase()) {
+      return true
+    } else {
+      continue
+    }
+  }
+return false  
+}
+
