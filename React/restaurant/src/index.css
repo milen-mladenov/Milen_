@@ -1,0 +1,72 @@
+:root {
+  --base-light-gray: #E7E7E7;
+  --base-dark-gray: #C4C4C4;
+  --primary-button: #000000;
+  --light-green: #73cc2f;
+  --light-green-transparent: #73cc2f5e;
+  --green: #61a12fb4;
+  --dark-green: #396e12;
+  --light-red: #c44343;
+  --red: #a53b3ba2;
+  --dark-red: #962626;
+  --light-yellow: #e3d639;
+  --yellow: #b8ae28;
+  --dark-yellow: #8f8724;
+}
+
+p:empty,
+h2:empty,
+h3:empty {
+  display: none;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+header {
+  background-color: var(--base-light-gray);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 1px 7px 0;
+  border-radius: 0 0 8px 8px;
+}
+
+header div {
+  display: flex;
+}
+
+#user_login_button {
+  height: 3rem;
+  padding: 1rem;
+  border: 0;
+  box-shadow: 0 0 4px 0;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#user_login_button:hover {
+  box-shadow: 0 0 7px 0;
+}
+
+button {
+  cursor: pointer;
+  box-sizing: border-box;
+}
