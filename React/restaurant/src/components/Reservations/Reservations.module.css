@@ -1,0 +1,126 @@
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.go_back,
+.current_table {
+    display: flex;
+}
+
+.go_back {
+    margin-left: -30rem;
+}
+
+.current_table {
+    margin-left: 10rem;
+    gap: 0.5rem;
+}
+
+.all_tables {
+    display: flex;
+    position: relative;
+    width: 1200px;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 1rem auto;
+    gap: 0.75rem;
+}
+
+.table {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 0;
+    cursor: pointer;
+}
+
+.table:hover {
+    box-shadow: 0 0 5px 1px;
+}
+
+.table p:last-child {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}
+
+.table p:first-child {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+}
+
+.type_buttons button {
+    padding: 1.5rem;
+    width: 145px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 0;
+    cursor: pointer;
+}
+
+.type_buttons button:hover,
+.combine_table:hover {
+    box-shadow: 0 0 6px 1px;
+}
+
+.table_buttons {
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.combine_table {
+    width: 300px;
+    height: 100px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 4px 0;
+}
+
+[data-table-reservation="true"] p:first-child {
+    display: block;
+}
+
+[data-table-reservation="true"] p:first-child {
+    display: none;
+}
+
+[data-table-state="free"] {
+    background-color: var(--base-dark-gray);
+}
+
+[data-current-user="false"] {
+    box-shadow: 0 0 7px 2px var(--red);
+}
+
+[data-current-user="true"] {
+    box-shadow: 0 0 7px 2px var(--green);
+}
+
+[data-table-state="occupied"] {
+    background-color: var(--green);
+}
+
+[data-table-state="payed"] {
+    background-color: var(--light-green-transparent);
+}
+
+[data-table-state="not_ready"] {
+    background-color: white;
+}
+
+[data-button-state="active"] {
+    display: block;
+}
+
+[data-button-state="inactive"] {
+    display: none;
+}

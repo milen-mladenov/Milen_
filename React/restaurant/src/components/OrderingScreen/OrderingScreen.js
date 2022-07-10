@@ -5,9 +5,9 @@ import { RightOrderSection } from "./RightOrderSection/RightOrderSection"
 export const OrderingScreen = () => {
     return (
         <>
-        <MainFilters />
-        <LeftOrderSection />
-        <RightOrderSection />
+            <MainFilters />
+            <LeftOrderSection />
+            <RightOrderSection />
         </>
     )
 }
