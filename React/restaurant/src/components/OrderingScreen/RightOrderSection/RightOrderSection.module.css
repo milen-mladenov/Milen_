@@ -1,0 +1,96 @@
+.table_select_and_menu_section {
+    text-align: center;
+    width: 500px;
+    height: 900px;
+}
+
+.open_new_table_button {
+    width: 400px;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 3px 0;
+}
+
+.table_options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.table_show,
+.table_order {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+.table_options div select {
+    cursor: pointer;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 0;
+    width: 50%;
+}
+
+/* -tables */
+.opened_tables {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.opened_table {
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 0;
+    font-size: 2rem;
+    height: 100px;
+}
+
+.table_n,
+.table_open_time,
+.table_message,
+.table_redact {
+    position: absolute;
+}
+
+.table_n {
+    top: 30%;
+    left: 40%;
+}
+
+.table_open_time {
+    color: white;
+    font-size: 18px;
+    top: 5px;
+    left: 5px;
+}
+
+.table_message {
+    font-size: 24px;
+    z-index: 5;
+    bottom: 5px;
+    left: 5px;
+}
+
+.table_message:hover {
+    fill: black;
+    box-shadow: 0 0 4px 0 var(--yellow);
+}
+
+.table_redact {
+    color: white;
+    z-index: 5;
+    top: -2px;
+    right: 5px;
+}
+
+.table_redact:hover {
+    color: var(--red);
+}

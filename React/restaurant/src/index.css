@@ -70,3 +70,70 @@ button {
   cursor: pointer;
   box-sizing: border-box;
 }
+
+[data-order-section-status="active"] {
+  display: block;
+}
+
+[data-order-section-status="inactive"] {
+  display: none !important;
+}
+
+[data-order-button-status="active"] {
+  box-shadow: 0 4px 7px 0;
+}
+
+[data-order-button-status="inactive"] {
+  box-shadow: 0 0 2px 0;
+}
+
+[data-table-select-status="active"] {
+  display: block;
+}
+
+[data-table-select-status="inactive"] {
+  display: none !important;
+}
+
+[data-has-access="full"] {
+  display: block;
+}
+
+[data-has-access="partial"] {
+  display: block;
+}
+
+[data-has-access="none"] {
+  display: none;
+}
+
+[data-has-message="true"] {
+  display: block;
+}
+
+[data-has-message="false"] {
+  display: none;
+}
+
+[data-own-table="true"] {
+  color: var(--dark-green);
+  background-color: var(--green);
+}
+
+[data-own-table="true"]:hover {
+  background-color: var(--light-green);
+}
+
+[data-own-table="false"] {
+  color: var(--dark-yellow);
+  background-color: var(--yellow);
+}
+
+[data-own-table="false"]:hover {
+  background-color: var(--light-yellow);
+}
+
+[data-table-closed="true"] {
+  box-shadow: 0 0 10px 5px var(--light-red);
+  border-radius: 10px;
+}
