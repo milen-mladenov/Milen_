@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Login />
-      {/* <OrderingScreen /> */}
+      {/* <Login /> */}
+      <OrderingScreen />
       {/* <Reservations /> */}
       {/* <Inventory /> */}
     </div>
