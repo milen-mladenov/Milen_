@@ -1,47 +1,81 @@
-import styles from '../TableOrder.module.css'
-import { useState } from "react"
+import styles from "../TableOrder.module.css";
+import { useEffect, useState } from "react";
 
-export const TableRow = ({ items }) => {
-    let currentOrder = items.currentOrder
-    const [order, setOrder] = useState(currentOrder);
-    const [currItem, setCurrItem] = useState("")
+export const TableRow = ({ item, orderHandler }) => {
+  const [order, setOrder] = useState(item.currentOrder || 0);
+  const [currItem, setCurrItem] = useState(item);
 
-    function increment() {
-        console.log("clicked");
-        setOrder(order + 1)
-    }
+  let currentOrder = currItem.currentOrder || 0;
 
-    function decrement() {
-        console.log("clicked");
-        if (order > 0) {
-            setOrder(order - 1)
-        }
-    }
+  function increment() {
+    setOrder(order + 1);
+  }
 
-    function handleInputOrder(e) {
-        let item = e.target.value;
-        setCurrItem(item)
+  function decrement() {
+    if (order > 0) {
+      setOrder(order - 1);
     }
-    function handleInput(e) {
-        let value = Number(e.target.value)
-        setOrder(value)
+  }
+
+  function addItem(e) {
+    let nextItem;
+    if (e.keyCode == 13) {
+      if (currItem.name.length >= 4 && order > 0) {
+        nextItem = true;
+      }
+      if (nextItem) {
+        orderHandler(currItem);
+        console.log("added");
+      }
     }
-    return (
-        <tr>
-            <td>
-                <p>{items.note}</p>
-            </td>
-            <td><input className={styles.ordered_item} type="text" placeholder="Име / Номер" onChange={handleInputOrder} value={currItem} /></td>
-            <td>
-                <p>{items.count}</p>
-            </td>
-            <td>
-                <div className={styles.order_number}><button onClick={decrement}>-</button><input type="number"
-                    max="999" onChange={handleInput} value={order} /><button onClick={increment}>+</button></div>
-            </td>
-            <td>
-                <p>{items.price}</p>
-            </td>
-        </tr>
-    )
-}
+  }
+
+  function handleInputOrder(e) {
+    let name = e.target.name;
+    let value = e.target.value;
+    setCurrItem((lines) => ({
+      ...lines,
+      [name]: value,
+    }));
+  }
+
+  function handleInput(e) {
+    let value = Number(e.target.value);
+    setOrder(value);
+    setCurrItem((lines) => ({
+      ...lines,
+      count: currentOrder,
+    }));
+  }
+
+  return (
+    <tr onKeyDown={addItem}>
+      <td className={styles.note}>
+        {currItem.note ? <p>{currItem.note}</p> : <p>+</p>}
+      </td>
+      <td>
+        <input
+          className={styles.ordered_item}
+          type="text"
+          placeholder="Име / Номер"
+          name="name"
+          onChange={handleInputOrder}
+          value={currItem.name}
+        />
+      </td>
+      <td>
+        <p className={styles.count}>{currItem.count}</p>
+      </td>
+      <td>
+        <div className={styles.order_number}>
+          <button onClick={decrement}>-</button>
+          <input type="number" max="999" onChange={handleInput} value={order} />
+          <button onClick={increment}>+</button>
+        </div>
+      </td>
+      <td>
+        <p className={styles.price}>{item.price}</p>
+      </td>
+    </tr>
+  );
+};

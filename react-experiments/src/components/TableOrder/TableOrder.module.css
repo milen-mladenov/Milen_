@@ -6,6 +6,7 @@
     display: grid;
     border-collapse: collapse;
     justify-content: end;
+    position: relative;
 }
 
 .order_table_head {
@@ -68,4 +69,24 @@ tr:nth-child(2n +1) {
     width: 100%;
     box-sizing: border-box;
     font-size: 24px;
+}
+
+.count, .price, .note p {
+    margin: 0;
+}
+
+.addRow {
+    width: 2rem;
+    height: 2rem;
+    background-color: green;
+    cursor: pointer;
+    position: relative;
+    bottom: -2rem;
+}
+.addOrder {
+    width: 6rem;
+    height: 2rem;
+    cursor: pointer;
+    position: relative;
+    bottom: -2rem;
 }
