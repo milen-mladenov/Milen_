@@ -1,11 +1,12 @@
 import styles from "../TableOrder.module.css";
 import { useEffect, useState } from "react";
-
+import { useForm } from "react-hook-form";
 
 export const TableRow = ({ item, handleItemInput }) => {
   const [order, setOrder] = useState(item.currentOrder || 0);
   const [currItem, setCurrItem] = useState(item);
-
+  const { register, handleSubmit } = useForm();
+  const handleRegistration = (data) => console.log(data);
   let currentOrder = currItem.currentOrder || 0;
 
   function increment() {
@@ -19,13 +20,15 @@ export const TableRow = ({ item, handleItemInput }) => {
   }
 
   function addItem(e) {
+    e.preventDefault()
     let nextItem;
     if (e.keyCode == 13) {
       if (currItem.name.length >= 4 && order > 0) {
         nextItem = true;
       }
       if (nextItem) {
-        handleItemInput(currItem);
+
+        handleSubmit(handleRegistration)
         console.log("added");
       }
     }
@@ -50,41 +53,38 @@ export const TableRow = ({ item, handleItemInput }) => {
   }
 
   return (
-    <tr onKeyDown={addItem}>
-      <td className={styles.note}>
+    <form onKeyDown={addItem}>
+      <label className={styles.note}>
         {currItem.note ? <p>{currItem.note}</p> : <p>+</p>}
-      </td>
-      <td>
+      </label>
+      <label>
         <input
           className={styles.ordered_item}
           type="text"
           placeholder="Име / Номер"
           name="name"
-          onChange={handleInputOrder}
-          value={currItem.name}
-          
+          {...register("name")}
         />
-      </td>
-      <td>
+      </label>
+      <label>
         <p className={styles.count}>{currItem.count}</p>
-      </td>
-      <td>
+      </label>
+      <label>
         <div className={styles.order_number}>
           <button onClick={decrement}>-</button>
           <input
             type="number"
             max="999"
             name="amount"
-            onChange={handleInput}
-            value={order}
-            
+
+            {...register("amount")}
           />
           <button onClick={increment}>+</button>
         </div>
-      </td>
-      <td>
+      </label>
+      <label>
         <p className={styles.price}>{item.price}</p>
-      </td>
-    </tr>
+      </label>
+    </form>
   );
 };

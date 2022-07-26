@@ -34,7 +34,7 @@ export const TableOrder = ({ order, orderHandler, finishOrder }) => {
 
   //   // setOrder((old) => [...old, item]);
   // }
-
+ 
   let index = order.length - 1;
   function createNewRow(e) {
     if (e.keyCode == 13) {
@@ -48,9 +48,9 @@ export const TableOrder = ({ order, orderHandler, finishOrder }) => {
 
   return (
     <>
-      <table id="order_table" className={styles.order_table}>
-        <thead>
-          <tr id="order_table_head" className={styles.order_table_head}>
+      <div id="order_table" className={styles.order_table}>
+        <div>
+          {/* <tr id="order_table_head" className={styles.order_table_head}>
             <th>
               <p>коментар</p>
             </th>
@@ -66,10 +66,10 @@ export const TableOrder = ({ order, orderHandler, finishOrder }) => {
             <th>
               <p>ед. сума</p>
             </th>
-          </tr>
-        </thead>
+          </tr> */}
+        </div>
 
-        <tbody onKeyDown={createNewRow}>
+        <div onKeyDown={createNewRow}>
           {order.map((item) => (
             <TableRow
               key={Math.random(5000)}
@@ -77,8 +77,8 @@ export const TableOrder = ({ order, orderHandler, finishOrder }) => {
               handleItemInput={handleItemInput}
             />
           ))}
-        </tbody>
-      </table>
+        </div>
+      </div>
       <button onClick={addRow} className={styles.addRow}>
         +
       </button>
