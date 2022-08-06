@@ -1,12 +1,12 @@
 import { html } from "../lib.js";
 
 
-const createTemplate = () => html`
-<!-- Create Page (Only for logged-in users) -->
-<section id="create">
+const editTemplate = () => html`
+<!-- Edit Page (Only for logged-in users) -->
+<section id="edit">
   <div class="form">
-    <h2>Create Offer</h2>
-    <form class="create-form">
+    <h2>Edit Offer</h2>
+    <form class="edit-form">
       <input
         type="text"
         name="title"
@@ -52,6 +52,6 @@ const createTemplate = () => html`
 </section>
 `
 
-export function createView(ctx) {
-    ctx.render(createTemplate())
+export function editView(ctx) {
+    ctx.render(editTemplate())
 }

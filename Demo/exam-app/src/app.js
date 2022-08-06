@@ -1,6 +1,14 @@
 import { render, page } from './lib.js'
-import { logout } from './api/users.js'
+import { login, logout } from './api/users.js'
 import { getUserData, clearUserData } from './util.js'
+
+import { homeView } from './views/home.js'
+import { dashboardView } from './views/dashboard.js'
+import { loginView } from './views/login.js'
+import { registerView } from './views/register.js'
+import { createView } from './views/create.js'
+import { detailsView } from './views/details.js'
+import { editView } from './views/edit.js'
 
 const main = document.querySelector('main')
 
@@ -8,12 +16,14 @@ document.getElementById("logoutBtn").addEventListener("click", onLogout)
 
 
 page(decorationCtx)
-page('/', () => console.log("home"))
-page('/memes', () => console.log("home"))
-page('/login', () => console.log("login"))
-page('/register', () => console.log("register"))
-page('/', () => console.log("home"))
-
+updateNav()
+page('/', homeView)
+page('/dashboard', dashboardView)
+page('/login', loginView)
+page('/register', registerView)
+page('/create', createView)
+page('/details/:id', detailsView)
+page('/edit/:id', editView)
 page.start()
 
 
@@ -31,11 +41,11 @@ function updateNav() {
     const userData = getUserData()
 
     if (userData) {
-        document.getElementById("user").style.display = "block";
-        document.getElementById("guest").style.display = "none";
+        document.querySelector(".user").style.display = "block";
+        document.querySelector(".guest").style.display = "none";
     } else {
-        document.getElementById("user").style.display = "none";
-        document.getElementById("guest").style.display = "block";
+        document.querySelector(".user").style.display = "none";
+        document.querySelector(".guest").style.display = "block";
     }
 }
 
