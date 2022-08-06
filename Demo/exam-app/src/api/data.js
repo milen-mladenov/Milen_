@@ -5,8 +5,8 @@ export const register = api.register
 export const logout = api.logout
 
 //get all items 
-export async function getAll() {
-    return api.get('/data/books?sortBy=_createdOn%20desc')
+export async function getAllJobs() {
+    return api.get('/data/offers?sortBy=_createdOn%20desc')
 }
 //get item by id
 export async function getById(id) {

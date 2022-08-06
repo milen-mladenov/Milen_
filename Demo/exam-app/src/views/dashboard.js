@@ -1,44 +1,34 @@
+import { getAllJobs } from "../api/data.js";
 import { html } from "../lib.js";
 
 
-const dashboardTemplate = () => html `
-<!-- Dashboard page -->
+const dashboardTemplate = (jobs) => html`
+
 <section id="dashboard">
   <h2>Job Offers</h2>
-
-  <!-- Display a div with information about every post (if any)-->
-  <div class="offer">
-    <img src="./images/example1.png" alt="example1" />
-    <p>
-      <strong>Title: </strong><span class="title">Sales Manager</span>
-    </p>
-    <p><strong>Salary:</strong><span class="salary">1900</span></p>
-    <a class="details-btn" href="">Details</a>
-  </div>
-  <div class="offer">
-    <img src="./images/example2.png" alt="example2" />
-    <p>
-      <strong>Title: </strong
-      ><span class="title">Senior Frontend Software Engineer</span>
-    </p>
-    <p><strong>Salary:</strong><span class="salary">7000</span></p>
-    <a class="details-btn" href="">Details</a>
-  </div>
-  <div class="offer">
-    <img src="./images/example3.png" alt="./images/example3.png" />
-    <p>
-      <strong>Title: </strong
-      ><span class="title">Invoice Administrator</span>
-    </p>
-    <p><strong>Salary:</strong><span class="salary">1700</span></p>
-    <a class="details-btn" href="">Details</a>
-  </div>
-
+    ${jobs.length == 0
+        ? html`<h2>No offers yet.</h2>`
+        : jobs.map(job => jobOfferCard(job))
+    }
   <!-- Display an h2 if there are no posts -->
-  <h2>No offers yet.</h2>
+  
 </section>
 `
 
-export function dashboardView(ctx) {
-    ctx.render(dashboardTemplate())
+const jobOfferCard = (job) => html`
+<div class="offer">
+<img src=${job.imageUrl} alt="./images/example3.png" />
+<p>
+  <strong>Title: </strong
+  ><span class="title">${job.title}</span>
+</p>
+<p><strong>Salary:</strong><span class="salary">${job.salary}</span></p>
+<a class="details-btn" href="/details/${job._id}">Details</a>
+</div>
+`
+
+export async function dashboardView(ctx) {
+    const jobs = await getAllJobs()
+    console.log(jobs);
+    ctx.render(dashboardTemplate(jobs))
 }

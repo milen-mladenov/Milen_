@@ -14,7 +14,6 @@ const main = document.querySelector('main')
 
 document.getElementById("logoutBtn").addEventListener("click", onLogout)
 
-
 page(decorationCtx)
 updateNav()
 page('/', homeView)

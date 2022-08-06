@@ -2,7 +2,7 @@ import { html } from "../lib.js";
 import { register } from '../api/users.js'
 
 const registerTemplate = (onSubmit) => html`
-<!-- Register Page (Only for Guest users) -->
+
 <section id="register">
   <div class="form">
     <h2>Register</h2>
@@ -26,7 +26,7 @@ const registerTemplate = (onSubmit) => html`
         placeholder="repeat password"
       />
       <button type="submit">register</button>
-      <p class="message">Already registered? <a href="#">Login</a></p>
+      <p class="message">Already registered? <a href="/login">Login</a></p>
     </form>
   </div>
 </section>
@@ -42,7 +42,7 @@ export function registerView(ctx) {
 
         const email = data.get('email')
         const password = data.get('password')
-        const rePass = data.get('repeatPassword')
+        const rePass = data.get('re-password')
 
 
         if (email == "" || password == "") {
