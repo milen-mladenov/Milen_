@@ -14,16 +14,11 @@ export async function createOffer(job) {
     return api.post('/data/offers', job)
 }
 //edit item
-export async function edit(id, job) {
-    return api.put('/data/jobs/' + id, job)
+export async function editOffer(id, job) {
+    return api.put('/data/offers/' + id, job)
 }
 //delete item
 export async function deleteOffer(id) {
     return api.del('/data/offers/' + id)
 }
 
-export async function like(jobId) {
-    return api.post('/data/likes', {
-        bookId
-    })
-}
