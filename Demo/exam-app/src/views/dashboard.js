@@ -10,7 +10,6 @@ const dashboardTemplate = (jobs) => html`
         ? html`<h2>No offers yet.</h2>`
         : jobs.map(job => jobOfferCard(job))
     }
-  <!-- Display an h2 if there are no posts -->
   
 </section>
 `
