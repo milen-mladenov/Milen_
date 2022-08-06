@@ -3,7 +3,7 @@ import { html } from "../lib.js";
 import { getUserData } from "../util.js";
 
 
-const detailsTemplate = (job, onDelete, jobOwner) => html`
+const detailsTemplate = (job, onDelete, jobOwner, isLogged) => html`
 
 <section id="details">
   <div id="details-wrapper">
@@ -33,29 +33,33 @@ const detailsTemplate = (job, onDelete, jobOwner) => html`
 
     <div id="action-buttons">
     ${jobOwner
-        ? html`
+    ? html`
         <a href="/edit/${job._id}" id="edit-btn">Edit</a>
         <a href="javascript:void(0)" @click=${onDelete} id="delete-btn">Delete</a>`
-        : html`<a href="" id="apply-btn">Apply</a>`
-    }
-
+    : ""
+  }
+    ${isLogged && !jobOwner ?
+    html`<a href="" id="apply-btn">Apply</a>`
+    : ""
+  }
     </div>
   </div>
 </section>
 `
 
 export async function detailsView(ctx) {
-    const job = await getJobById(ctx.params.id)
-    const user = getUserData()
-    const jobOwner = user?.id == job._ownerId
+  const job = await getJobById(ctx.params.id)
+  const user = getUserData()
+  const jobOwner = user?.id == job._ownerId
+  const isLogged = user ? true : false
 
-    async function onDelete() {
-        const choice = confirm('Are you sure you want to delete this meme?')
+  async function onDelete() {
+    const choice = confirm('Are you sure you want to delete this meme?')
 
-        if (choice) {
-            await deleteOffer(job._id)
-            ctx.page.redirect('/dashboard')
-        }
+    if (choice) {
+      await deleteOffer(job._id)
+      ctx.page.redirect('/dashboard')
     }
-    ctx.render(detailsTemplate(job, onDelete, jobOwner))
+  }
+  ctx.render(detailsTemplate(job, onDelete, jobOwner, isLogged))
 }
